@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="post-clean-blog">
+        <meta property="og:title" content="Warning C4804">
     
 
     <!--Open Graph Description-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>post-clean-blog - Rnhappysmile</title>
+    <title>Warning C4804 - Rnhappysmile</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -165,13 +165,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>post-clean-blog</h1>
+                    <h1>Warning C4804</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2019-04-16
+                            2019-04-17
                         
                     </span>
                 </div>
@@ -187,27 +187,16 @@
 
             <!-- Tags and categories -->
            
-                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
-                    
-                        
-
-
-<a href="/tags/hexo/">#hexo</a> <a href="/tags/clean-blog/">#clean-blog</a> <a href="/tags/theme/">#theme</a>
-
-
-                    
-                </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    
-                </div>
-            
 
             <!-- Gallery -->
             
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
+                <h1 id="Warning-C4804"><a href="#Warning-C4804" class="headerlink" title="Warning C4804"></a>Warning C4804</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">if</span> (<span class="number">0</span> &lt; a &lt; <span class="number">10</span>) <span class="comment">// Warning C4804 발생</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>if 조건문에서 warning C4804가 발생 하면서 “‘operation’: unsafe use of type ‘bool’ in operation” 메시지를 볼 수 있습니다.<br>bool 변수 또는 예기치 않은 방식으로 조건문을 확인 할 때 볼 수 있었습니다.<br>해당 warning C4804를 해결하기 위해서는  아래와 같이 조건문을 변경해주면 됩니다.<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">if</span> ((<span class="number">0</span> &lt; a) &amp;&amp; (a &lt; <span class="number">10</span>)) <span class="comment">// Warning C4804 발생</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>이렇게 작성하면 조건문에서 실수도 줄이고 가독성도 높힐 수 있습니다.</p>
+
 
                 
             </div>
